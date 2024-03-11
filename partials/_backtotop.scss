@@ -1,0 +1,35 @@
+.back-top-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-weight: bolder;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    box-shadow: 1px 1px 6px rgb(31, 31, 31);
+    transition: all .5s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 4;
+
+    &:is(:hover, :focus-visible){
+        background-color: $primary-color-variant;
+        color: $secondary-color;
+
+    }
+ 
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+    
+
+}
+
+
+ 

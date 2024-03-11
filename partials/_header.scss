@@ -1,0 +1,284 @@
+.nav{
+    width: 100vw;
+    padding: .6rem 0;
+    position: fixed;
+    z-index: 10;
+    display: grid;
+    place-items: center; 
+    box-shadow: 2px 2px 15px #00000058;
+    background: #ffffff;
+    transition: all 500ms ease;
+
+     .container{
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+
+        ul{
+          display: flex;
+          gap: 3rem;
+          align-items: center;
+        }
+
+        button{
+            display: none;
+            color: $black-color;
+        }
+
+        a{
+            color: $black-color;
+            font-weight: 400;
+            font-size: 0.9rem;
+            border-bottom: 3px solid transparent;
+            transition: all 500ms ease;
+
+            &:hover{
+                border-color: $primary-color;
+               
+            }
+        }
+
+        .nav_logo h2{
+            color: orangered;
+            font-weight: 100;
+        }
+    }
+}
+
+@media screen and (max-width : 840px) {
+    .nav{
+        .container{
+            button{
+                display: inline-block;
+                background: transparent;
+                color: $primary-color;
+                font-size: 2rem;
+                cursor: pointer;
+                
+            &#close_nav-btn{
+                display: none;
+            }
+          }
+
+          ul{
+            position: fixed;
+            right: 5%;
+            top: 5rem;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            display: none;
+            perspective: 300px;
+
+            li{
+                width: 100%;
+                opacity: 0;
+                animation: flipNavItem 500ms ease forwards;
+                transform-origin: top;
+
+              &:nth-child(2){
+                animation-delay: 200ms;
+              }
+
+              &:nth-child(3){
+                animation-delay: 400ms;
+              }
+
+              &:nth-child(4){
+                animation-delay: 600ms;
+              }
+
+              &:nth-child(5){
+                animation-delay: 800ms;
+              }
+                
+                @keyframes flipNavItem {
+                    0%{
+                       transform: rotateX(90deg);
+                    }
+                    100%{
+                        transform: rotateX(0deg);   
+                        opacity: 1;
+                    }
+                }
+
+                a{
+                    color: $white-color;
+                    height: 100%;
+                    display: block;
+                    padding: 1.5rem 2rem;
+                    border-radius: 0;
+                    background: linear-gradient($primary-color-variant, darken($primary-color-variant, 12%));
+
+                    &.btn{
+                        background: $secondary-color;
+                    }
+                }
+            }
+          }
+        }
+    }
+}
+
+//HEADER
+
+header{
+    background-image: url(../img/home.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    background-attachment: fixed;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    
+    
+
+
+    .container{
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: 46%;
+        gap: 8%;
+        align-items: center;
+        justify-content: space-between;
+        
+
+        .header-text{
+            h1{
+                font-size: 4rem;
+                line-height: 1.1;
+                font-weight: 100;
+                letter-spacing: -3px;
+                color: #fff;
+
+                span{
+                    color: $secondary-color;
+                }
+            }
+            p{
+                font-weight: 100;
+                margin: 1rem 0 2rem;
+                color: $white-color;
+                font-size: 1.1rem;
+            }
+        }
+
+        .sec-header-text{
+            img{
+                border-radius: 29% 71% 56% 44% / 40% 58% 42% 60% ;
+                background: #e0e0e0;
+            }
+        }
+    }
+
+    .motor{
+        width: 60%;
+        margin: 0 auto;
+        background: #fff;
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        justify-content: space-between;
+        border-radius: 5px;
+        box-shadow: 3px 3px 10px rgba(68, 67, 67, 0.746);
+        .stand{
+            text-align: center;
+            padding: 1rem;
+            img{
+                margin: 0 auto;
+                margin-bottom: .5rem;
+                width: 50px;
+                color: pink;
+            }
+            p{
+                font-weight: 100;
+                font-size: 12px;
+            }
+        }
+    }
+
+}
+
+//MORE INFO
+
+.more__info{
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 3px 3px 13px rgba(128, 128, 128, 0.323);
+
+    .container{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(6, 15%);
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width : 840px){
+    header{
+        height: 60vh;
+
+        .container{
+            gap: 1rem;
+            grid-template-columns: 70%;
+            text-align: center;
+            justify-content: center;
+            .header_content{
+                h1{
+                  font-size: 2rem;
+                  text-align: center;
+                }
+            }
+        }
+        .motor{
+            width: 90%;
+        }
+    }
+
+    .more__info{
+        .container{
+            width: 100%;
+            h4{
+                font-size: 15px;
+            }
+            p{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+//MOBILE
+
+@media screen and (max-width : 500px){
+     header{
+        height: 100vh;
+        padding-top: 3rem;
+
+        .container{
+            grid-template-columns: 1fr;
+            text-align: center;
+
+            .header_content{
+                margin: 0.8rem 0 1.5rem;
+                line-height: 1.4rem;
+
+                h1{
+                    font-size: 2.2rem;
+                }
+            }
+        }
+        .motor{
+            grid-template-columns: repeat(2, 40%);
+        }
+     }
+
+     .more__info{
+        .container{
+            grid-template-columns: repeat(2, 40%);
+            text-align: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+     }
+}

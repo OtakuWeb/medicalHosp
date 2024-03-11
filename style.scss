@@ -1,0 +1,34 @@
+@import "./partials/config";
+@import "./partials/mixin";
+@import "./partials/general";
+@import "./partials/header";
+@import "./partials/services";
+@import "./partials/special";
+@import "./partials/appoints";
+@import "./partials/footer";
+@import "./partials/about";
+@import "./partials/testimonial";
+@import "./partials/backtotop";
+
+/*SCROLL EFFECT*/
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: $black-color;
+    border-radius: 10px;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+
+    &.active{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
